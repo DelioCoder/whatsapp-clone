@@ -2,6 +2,7 @@ import LoginScreen from "./pages/LoginScreen";
 import useLocalStorage from './hooks/useLocalStorage';
 import HomeScreen from "./pages/HomeScreen";
 import { ContactsProvider } from "./contexts/ContactsProvider";
+import { ConversationProvider } from "./contexts/ConversationProvider";
 
 function App() {
 
@@ -9,7 +10,9 @@ function App() {
 
   const dashboard = (
     <ContactsProvider>
-      <HomeScreen id={ id } />
+      <ConversationProvider>
+        <HomeScreen id={ id } />
+      </ConversationProvider>
     </ContactsProvider>
   )
 
